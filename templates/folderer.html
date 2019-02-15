@@ -1,0 +1,25 @@
+<!doctype html>
+    <title>Manage folders</title>
+    <h1>Manage folders</h1>
+    <h2>List of folders: </h2>
+    <ul>
+      {% for folder in exsisting %}
+        <li>{{ folder }} </li>
+      {% endfor %}
+    </ul>
+    <form method=post enctype=multipart/form-data action="{{ url_for('foldermanager') }}">
+      <input type="text" name=folder>
+      <select name="action">
+            <option value="create">create</option>
+            <option value="delete">delete</option>
+     </select>
+      <input type=submit value=Manage>
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <h2>Last action:</h2> <p>{{ message }}</p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}

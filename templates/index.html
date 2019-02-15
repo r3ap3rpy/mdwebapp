@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	{% if MDContent is not none %}
+		{{ MDContent | safe }}
+	{% else %}
+		<H2>index.md file is missing from the md folder.</H2>
+	{% endif %}
+
+	{% if Routes is not none %}
+		<H2>List of routes:</H2>
+		<ul >
+		{% for route in Routes %}
+			<li><a href="/{{ route }}" target="_blank">/{{ route }}</a></li>
+		{% endfor %}
+		</ul>
+	{% else %}
+		{% if MDContent is not none %}
+		If you want to have extra context routes you need to create the subfolders in the #md# folder and only 1 subfolder is supported.
+		{% endif %}
+	{% endif %}
+	<H2>You may reuse the code anyway you see fit :)</H2>
+{% endblock%}

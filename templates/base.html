@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <title>MDWebApp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A webapp to render MD into html">
+    <meta name="author" content="Szabó Dániel Ernő">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='css/hack.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='css/dark-grey.css') }}">
+
+</head>
+
+<body class="hack dark-grey">
+    
+
+    {% block content %}
+
+    {% endblock%}
+
+</body>
+
+</html>

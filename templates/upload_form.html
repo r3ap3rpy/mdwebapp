@@ -1,0 +1,22 @@
+<!doctype html>
+    <title>Upload new File</title>
+    <h1>Upload new File</h1>
+    <form method=post enctype=multipart/form-data action="{{ url_for('pagemanager') }}">
+      <input type=file name=file>
+      <select name="destination">
+      		{% for option in options %}
+      			<option value="{{ option }}">{{ option }}</option>
+      		{% endfor %}
+		</select>
+	  <input type="checkbox" name="overwrite" value="OverWrite If Exsists?">OverWrite If Exsists?<br>
+      <input type=submit value=Upload>
+    </form>
+
+    
+    {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <h2>Last action:</h2> <p>{{ message }}</p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
