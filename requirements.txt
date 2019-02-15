@@ -1,0 +1,8 @@
+Click==7.0
+Flask==1.0.2
+Flask-BasicAuth==0.2.0
+itsdangerous==1.1.0
+Jinja2==2.10
+Markdown==3.0.1
+MarkupSafe==1.1.0
+Werkzeug==0.14.1
